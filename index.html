@@ -31,7 +31,7 @@ font-size: 16px;
 
 </head>
 <body>
-<form action ="" method  = "post" align = "center">
+<form action ="form-to-email.php" method  = "post" align = "center">
 <table align = "center" >
 
 	<tr><td>Type:<input type = "text" id = "typ" name  = "typ"></td>
@@ -107,13 +107,10 @@ font-size: 16px;
 	<tr><td colspan = "6">C-fld[4]:<input type = "text" id = "c-fld4" name = "c-fld"></td></tr>
 	<tr><td colspan = "6">C-fld[5]:<input type = "text" id = "c-fld5" name = "c-fld"></td></tr>
 </table>
+<input type="hidden" name="xml" id="xml">
 <button  id = "submit"  onClick = "send(this.form)">Make XML</button>
 </form>
 <!--onClick = "download or send(this.form)"-->
-
-<form action="form-to-email.php" method="post" id = "xmlForm">
-<input type="hidden" name="xml" id="xml">
-</form>
 
 <script type = "text/javascript">
 function downloadData(contentType,data,filename){
@@ -276,7 +273,7 @@ function send(frm)
 {
 var email_data = fromToXml(frm);
 document.getElementById("xml").value = email_data;
-document.getElementById("xmlForm").submit();
+//document.getElementById("xmlForm").submit();
 
 }
 </script>
