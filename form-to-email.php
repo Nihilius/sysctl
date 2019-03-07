@@ -23,8 +23,8 @@ if(isset($_POST['xml'])) {
 
 
 // create email headers
-$headers = 'From: SysCtl@gmail.com'."\r\n".
-'Reply-To: paintadventures0@gmail.com' . "\r\n" .
+$headers = 'From: SysCtl'."\r\n".
+'Reply-To: help desk' . "\r\n" .
 'X-Mailer: PHP/' . phpversion();
 mail($email_to, $email_subject, $email_message, $headers);
 
