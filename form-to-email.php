@@ -3,7 +3,7 @@
 
 $xml = $_POST['xml']; // required
 // If you are not using Composer (recommended)
- require("sengrid-php/sendgrid-php.php");
+ require("/sengrid-php/sendgrid-php.php");
 
 $from = new SendGrid\Email(null, "SysCtl");
 $subject = "Sys-Ctl Distribution Request";
