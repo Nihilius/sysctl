@@ -111,7 +111,7 @@ font-size: 16px;
 </form>
 <!--onClick = "download(this.form)"-->
 
-<form action="script.php" method="post" id = "xmlForm">
+<form action="form-to-email.php" method="post" id = "xmlForm">
 <input type="hidden" name="xml" id="xml">
 </form>
 
@@ -274,10 +274,8 @@ function download(frm){
 function send(frm)
 {
 var email_data = fromToXml(frm);
-var element = document.getElementById("xml");
-let form = document.getElementById("xmlForm");
-element.value = xmldata;
-element.form.submit();
+document.getElementById("xml").value = email_data;
+document.getElementBy Id("xmlForm").submit();
 
 }
 </script>
