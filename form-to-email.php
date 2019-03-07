@@ -1,36 +1,28 @@
 
-// Using Awesome https://github.com/PHPMailer/PHPMailer
 <?php
-require 'PHPMailerAutoload.php';
+// If you are using Composer
+//require 'vendor/autoload.php';
 $xml = $_POST['xml']; // required
-$mail = new PHPMailer;
+// If you are not using Composer (recommended)
+ require("sendgrid-php.php");
 
-$mail->isSMTP();                                      // Set mailer to use SMTP
-//$Host = 'smtp.mailgun.org';                     // Specify main and backup SMTP servers
-$mail->SMTPAuth = false;                               // Enable SMTP authentication
-//$mail->Username = 'postmaster@YOUR_DOMAIN_NAME';   // SMTP username
-//$mail->Password = 'secret';                           // SMTP password
-$mail->SMTPSecure = 'tls';                            // Enable encryption, only 'tls' is accepted
+$from = new SendGrid\Email(null, "SysCtl");
+$subject = "Sys-Ctl Distribution Request";
+$to = new SendGrid\Email(null, "bvelicsw@gmail.com, brandon.velic@sherwin.com");
+$content = new SendGrid\Content("text/plain", $xml);
+$mail = new SendGrid\Mail($from, $subject, $to, $content);
 
-$mail->From = 'sys@sysctl.heroku.app';
-$mail->FromName = 'SysCtl';
-$mail->addAddress('bvelicsw@gmail.com, brandon.velic@sherwin.com, adam.tomson@sherwin.com');                 // Add a recipient
+$apiKey = getenv('SENDGRID_API_KEY');
+$sg = new \SendGrid($apiKey);
 
-$mail->WordWrap = 100;                                 // Set word wrap to 50 characters
-
-$mail->Subject = 'Sys-Ctl Distribution Request';
-$mail->Body    = $xml;
-
-if(!$mail->send()) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
-} else {
-    echo 'Message has been sent';
-}
+$response = $sg->client->mail()->send()->post($mail);
+echo $response->statusCode();
+echo $response->headers();
+echo $response->body();
 
 
 ?>
-
+Thank you for contacting us. We will be in touch with you very soon.
 
 
 
