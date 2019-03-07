@@ -135,7 +135,7 @@ function fromToXml(form){
 var date = currentdate.getFullYear() + "-" +  currentdate.getMonth() + "-"+currentdate.getDay() ;
 var time = currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
 
-    var xmldata=['<?xml version="1.0" encoding="UTF-8"?>'];
+    var xmldata=['<'+ '?xml version="1.0" encoding="UTF-8"?'+'>'];
 	  xmldata.push("<sysCtlUpdtMsg xmlns:=\"http//www.w3.org/2001/XMLSchema-instance\">");
 
 	  xmldata.push("<dlHeaderRcd>");
