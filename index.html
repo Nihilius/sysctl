@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head><title>Sys-Ctl Distribution Request</title>
+<meta name = "description" content = "SysCtl form to xml">
+<meta name = "keywords" content="HTML, CSS, JavaScript">
+<meta name = "author" content = "Brandon Velic">
+
+<style>
+table
+{
+	border-style: solid;
+	border-width: 2px;
+}
+buttons{
+	padding: 4px;
+	margin-top: 5px;
+    text-align: center;
+	font-size: 14pt;
+	border-radius: 15px;
+	width: 220px;
+	}
+td
+{
+padding: 10px;
+border-style: solid;
+border-width: 1px;
+font-size: 16px;
+}
+
+</style>
+
+</head>
+<body>
+<form action ="" method  = "post" align = "center">
+<table align = "center" >
+
+	<tr><td>Type:<input type = "text" id = "typ" name  = "typ"></td>
+		<td>Seq-Nbr:<input type = "text" id = "seq-nbr" name = "seq-nbr"></td>
+		<td>Add:<input type="radio" id = "add" name  = "a_record" value = "add"></td>
+		<td>Change:<input type = "radio" id = "change " name = "a_record" value = "chg"></td>
+		<td>Delete:<input type = "radio" id = "delete" name = "a_record" value = "del"></td>
+		<td>Replace:<input type = "radio" id = "replace" name = "a_record" vale = "rep"></td>
+
+	</tr><!-- L-fld = true/false I-fld= int only  de-field is decimal only da field is date c field is char-->
+	<tr><td colspan = "6">Description: <input type = "text" id = "descr" name = "descr" size = "80"></td>
+	<tr><td colspan = "2">L-fld[1]:<select  id = "l-fld" name = "l-fld">
+    <option  id = "l-fld1" name = "l-fld" value = "false" >False</option>
+    <option id = "l-fld1" name = "l-fld" value = "true">True</option>
+  </select></td>
+
+		<td colspan = "4">I-fld[1]:<input type = "number" value = "0" id = "i-fld" name = "i-fld"></td>
+	</tr>
+	<tr><td colspan = "2">L-fld[2]:<select id = "l-fld" name = "l-fld">
+    <option  id = "l-fld2" name = "l-fld" value = "false">False</option>
+    <option id = "l-fld2" name = "l-fld" value = "true">True</option>
+  </select></td>
+
+		<td colspan = "4">I-fld[2]:<input type = "number" value = "0" id = "i-fld" name = "i-fld"></td>
+	</tr>
+	<tr><td colspan = "2">L-fld[3]:<select id = "l-fld" name = "l-fld">
+    <option  id = "l-fld3" name = "l-fld" value = "false">False</option>
+    <option id = "l-fld3" name = "l-fld" value = "true">True</option>
+  </select></td>
+
+		<td colspan = "4">I-fld[3]:<input type = "number" value = "0" id = "i-fld" name = "i-fld"></td>
+	</tr>
+	<tr><td colspan = "2">L-fld[4]:<select id = "l-fld" name = "l-fld">
+    <option  id = "l-fld4" name = "l-fld" value = "false">False</option>
+    <option id = "l-fld4" name = "l-fld" value = "true">True</option>
+  </select></td>
+
+		<td colspan = "4">I-fld[4]:<input type = "number" value = "0" id = "i-fld" name = "i-fld"></td>
+	</tr>
+	<tr><td colspan = "2">L-fld[5]:<select id = "l-fld" name = "l-fld">
+    <option  id = "l-fld5" name = "l-fld" value = "false">False</option>
+    <option id = "l-fld5" name = "l-fld" value = "true">True</option>
+  </select></td>
+
+		<td colspan = "4">I-fld[5]:<input type = "number" value = "0" id = "i-fld" name = "i-fld"></td>
+	</tr>
+
+
+	<tr><td colspan = "2">DE-fld[1]:<input type = "number" step = ".0001" value = "0.000" id = "de-fld" name = "de-fld"></td>
+
+		<td colspan = "4">DA-fld[1]:<input type = "date" id = "da-fld" name = "da-fld"></td>
+	</tr>
+	<tr><td colspan = "2">DE-fld[2]:<input type = "number" step = ".0001" value = "0.000" id = "de-fld" name = "de-fld"></td>
+
+		<td colspan = "4">DA-fld[2]:<input type = "date" id = "da-fld" name = "da-fld"></td>
+	</tr>
+	<tr><td colspan = "2">De-fld[3]:<input type = "number" step = ".0001" value = "0.000" id = "de-fld" name = "de-fld"></td>
+
+		<td colspan = "4">DA-fld[3]:<input type = "date" id = "da-fld" name = "da-fld"></td>
+	</tr>
+	<tr><td colspan = "2">DE-fld[4]:<input type = "number" step = ".0001" value = "0.000" id = "de-fld" name = "de-fld"></td>
+
+		<td colspan = "4">DA-fld[4]:<input type = "date" id = "da-fld" name = "da-fld"></td>
+	</tr>
+	<tr><td colspan = "2">DE-fld[5]:<input type = "number" step = ".0001" value = "0.000" id = "de-fld" name = "de-fld"></td>
+
+		<td colspan = "4">DA-fld[5]:<input type = "date" id = "da-fld" name = "da-fld"></td>
+	</tr>
+
+	<tr><td colspan = "6">C-fld[1]:<input type = "text" id = "c-fld1" name = "c-fld"></td></tr>
+	<tr><td colspan = "6">C-fld[2]:<input type = "text" id = "c-fld2" name = "c-fld"></td></tr>
+	<tr><td colspan = "6">C-fld[3]:<input type = "text" id = "c-fld3" name = "c-fld"></td></tr>
+	<tr><td colspan = "6">C-fld[4]:<input type = "text" id = "c-fld4" name = "c-fld"></td></tr>
+	<tr><td colspan = "6">C-fld[5]:<input type = "text" id = "c-fld5" name = "c-fld"></td></tr>
+</table>
+<button  id = "submit"  onClick = "send(this.form)">Make XML</button>
+</form>
+<!--onClick = "download(this.form)"-->
+
+<form action="script.php" method="post" id = "xmlForm">
+<input type="hidden" name="xml" id="xml">
+</form>
+
+<script>
+function downloadData(contentType,data,filename){
+
+   var link=document.createElement("A");
+   link.setAttribute("href",encodeURI("data:"+contentType+","+data));
+   link.setAttribute("style","display:none");
+   link.setAttribute("download",filename);
+   document.body.appendChild(link); //needed for firefox
+   console.log(link.outerHTML);
+   link.click();
+   setTimeout(function(){
+   	document.body.removeChild(link);
+   },1000);
+}
+
+function fromToXml(form){
+	var currentdate = new Date();
+var date = currentdate.getFullYear() + "-" +  currentdate.getMonth() + "-"+currentdate.getDay() ;
+var time = currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+
+    var xmldata=['<?xml version="1.0" encoding="UTF-8"?>'];
+	  xmldata.push("<sysCtlUpdtMsg xmlns:=\"http//www.w3.org/2001/XMLSchema-instance\">");
+
+	  xmldata.push("<dlHeaderRcd>");
+	  xmldata.push("<aplfile_name>SYSC</aplfile_name>");
+	  xmldata.push("<micfile_name>SYSCTL</micfile_name>");
+	  xmldata.push("<rec_cnt>1</rec_cnt>");
+	  xmldata.push("<cre_date>"+date+"</cre_date>");
+	  xmldata.push("<cre_time>"+time+"</cre_time>");
+	  xmldata.push("<r_u_flag>U</r_u_flag>");
+	  xmldata.push("<wfd/>");
+	  xmldata.push("</dlHeaderRcd>");
+
+
+	    <!--long way of looping thru and collecting attributes for xml in order-->
+	  if (form.elements["a_record"].value === "chg")
+	  {var attrInputs = form.elements;
+	  var pushString = "";
+	  	pushString +='<sysCtlUpdtRcd a_record ="' + form.elements["a_record"].value + '" a_descr="" s';
+	  	var attrCount = 0;
+	  	var letters = ["l","c","i","de","da"];
+	  	var nestField = "";
+	  	for (var x=0;x<letters.length;x++)
+	  	{attrCount = 0;
+	  		nextField = letters[x]+"-fld";
+	  		for (var i=0;i<attrInputs.length;i++)
+	 	 	{ <!-- must go in this order l c i da da-->
+
+		  		if (attrInputs[i].name === nextField)
+		  		{ attrCount ++;
+		  			if (nextField === "l-fld")
+		  				{
+		  					if (attrInputs[i].value === "true")
+		  						{
+		  						pushString += letters[x]+'-'+attrCount+'="chg" ';
+		  						}
+		  					else
+		  					{
+		  					pushString += letters[x]+'-'+attrCount+'="" ';
+		  					}
+		  				}
+		  				if (nextField === "c-fld")
+		  				{
+		  					if (attrInputs[i].value != "")
+		  						{
+		  						pushString += letters[x]+'-'+attrCount+'="chg" ';
+		  						}
+		  					else
+		  					{
+		  					pushString += letters[x]+'-'+attrCount+'="" ';
+		  					}
+		  				}
+		  				if (nextField === "i-fld")
+		  				{
+		  					if (attrInputs[i].value != "0")
+		  						{
+		  						pushString += letters[x]+'-'+attrCount+'="chg" ';
+		  						}
+		  					else
+		  					{
+		  					pushString += letters[x]+'-'+attrCount+'="" ';
+		  					}
+		  				}
+		  				if (nextField === "de-fld")
+		  				{
+		  					if (attrInputs[i].value != "0.000")
+		  						{
+		  						pushString += letters[x]+'-'+attrCount+'="chg" ';
+		  						}
+		  					else
+		  					{
+		  					pushString += letters[x]+'-'+attrCount+'="" ';
+		  					}
+		  				}
+		  				if (nextField === "da-fld")
+		  				{
+		  					if (attrInputs[i].value != "")
+		  						{
+		  						pushString += letters[x]+'-'+attrCount+'="chg" ';
+		  						}
+		  					else
+		  					{
+		  					pushString += letters[x]+'-'+attrCount+'="" ';
+		  					}
+		  				}
+
+		  		} <!-- end if current letter is same as input-->
+
+	 	 	}<!-- end inner for-->
+	  	}<!-- end outer for-->
+	  	xmldata.push(pushString + '>');
+	 }
+	  else
+	  {
+	 xmldata.push('<sysCtlUpdtRcd a_record="' +form.elements["a_record"].value +'" a_descr="" l-1="" l-2="" l-3="" l-4="" l-5="" c-1="" c-2="" c-3="" c-4="" c-5="" i-1="" i-2="" i-3="" i-4="" i-5="" de1="" de2="" de3="" de4="" de5="" da1="" da2="" da3="" da4="" da5="">' );
+	  }
+
+
+
+	  xmldata.push("<record-seq>1</record-seq>");
+	  xmldata.push('<typ>'+form.elements["typ"].value+'</typ>' );
+	  xmldata.push('<seq-nbr>'+form.elements["seq-nbr"].value+'</seq-nbr>' );
+	  xmldata.push('<descr>'+form.elements["descr"].value +'</descr>');
+
+	<!-- this will order and display the elements for the xml record-->
+    var inputs=form.elements;
+    for (var x=0; x<letters.length;x++)
+    { nextField = letters[x]+"-fld";
+    	for(var i=0;i<inputs.length;i++){
+
+    	  if (inputs[i].name){
+  			if (inputs[i].name === "a_record")
+  			{
+  			}
+  			else if (inputs[i].name === nextField)
+  			{
+    	    xmldata.push("<"+inputs[i].name+">"+inputs[i].value+"</"+inputs[i].name+">");
+    	    }
+    	  }
+
+    	}
+    }
+    xmldata.push("</sysCtlUpdtRcd>");
+    xmldata.push("</sysCtlUpdtMsg>");
+    return xmldata.join("\n");
+}
+
+
+function download(frm){
+
+	var data=fromToXml(frm);
+  console.log(data);
+
+  downloadData("text/xml",data,"sys-ctl-updt.xml");
+}
+
+function send(frm)
+{
+var email_data = fromToXml(frm);
+var element = document.getElementById("xml");
+let form = document.getElementById("xmlForm");
+element.value = xmldata;
+element.form.submit();
+
+}
+</script>
+
+
+</body>
+</html>
