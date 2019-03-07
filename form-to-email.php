@@ -1,7 +1,6 @@
 
 <?php
-// If you are using Composer
-//require 'vendor/autoload.php';
+
 $xml = $_POST['xml']; // required
 // If you are not using Composer (recommended)
  require("sendgrid-php.php");
